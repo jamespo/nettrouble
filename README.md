@@ -19,16 +19,16 @@ Ensure you have [Go](https://go.dev/doc/install) installed.
 ```bash
 git clone https://github.com/jamespo/nettrouble.git
 cd nettrouble
-go build -o nettrouble cmd/nettrouble/main.go
+go build -o nettrouble ./cmd/nettrouble/
 ./nettrouble
 ```
 
 ## Usage
 
-Simply run the executable to start the diagnostics:
-
 ```bash
-./nettrouble
+./nettrouble                    # full diagnostics (requires root for ping)
+sudo ./nettrouble               # privileged raw-socket ping
+./nettrouble -skip-speedtest    # skip the bandwidth test (it's slow)
 ```
 
 ## Development
